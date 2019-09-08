@@ -1,0 +1,18 @@
+@function back($color) {
+ @if(lightness($color) > 50) {
+  @return #333;
+ }
+
+ @else {
+  @return #fff;
+ }
+}
+
+@mixin set-background($color) {
+ background: $color;
+ color: back($color);
+}
+
+$primary-color : rgb(0, 163, 204);
+$container : 1100px;
+$small : 768px;

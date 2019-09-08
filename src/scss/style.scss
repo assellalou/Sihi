@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import 'helpers';
+
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ outline: none;
+ transition: all 0.2s ease-in;
+}
+
+html,
+body {
+ height: 100%;
+ font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+ position: fixed;
+ width: 100%;
+ background: rgba(26, 30, 31, 0.774);
+ height: 70px;
+ border-bottom: 1px solid $primary-color;
+ z-index: 1;
+
+
+ .brand {
+  margin: 1rem;
+  padding: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.15rem;
+
+  a {
+   color: $primary-color;
+
+   &:hover {
+    color: #fff;
+   }
+  }
+ }
+
+ a {
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+   color: $primary-color;
+  }
+ }
+
+ .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $container;
+  margin: auto;
+  height: 100%;
+
+  ul {
+   list-style: none;
+   display: flex;
+
+   li {
+
+    a {
+     margin: 0 0.5rem;
+     padding: 0.5rem;
+    }
+   }
+  }
+ }
+}
+
+@media only screen and (max-width:$small) {
+ .navbar {
+  height: auto;
+  padding: 0.5rem;
+
+  .brand {
+   width: 100%;
+   text-align: center;
+   margin: 0;
+
+  }
+
+  .container {
+   width: 100%;
+   flex-direction: column;
+
+   ul {
+    width: 100%;
+    flex-direction: column;
+
+    li {
+     margin: 0.3rem;
+    }
+   }
+  }
+ }
+}
+
+.landing {
+ position: relative;
+ height: 100vh;
+ background: url('./../img/bg.jpg') no-repeat center center/cover;
+
+ .overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  color: #fff;
+
+  h1 {
+   margin-bottom: 1.5rem;
+
+  }
+
+  h3 {
+   margin-bottom: 1.5rem;
+
+   i {
+    color: red;
+   }
+  }
+
+  p {
+   font-size: 1.01rem;
+   margin: 0 1rem 1.5rem 1rem;
+  }
+
+  .buttons {
+   a {
+    text-decoration: none;
+    @include set-background($primary-color);
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+
+    &:hover {
+     background: darken($primary-color, 10%);
+    }
+   }
+
+   .primary {
+    @include set-background(#fff);
+
+    &:hover {
+     background: darken(#333, 1%);
+     color: #fff;
+    }
+   }
+  }
+ }
+}
+
+//mad with love by assellalou
